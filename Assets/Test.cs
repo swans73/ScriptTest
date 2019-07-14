@@ -5,11 +5,10 @@ using UnityEngine;
 public class Test : MonoBehaviour {
 	public class Boss {
 		public int mp = 53;
-		public void Magic() {
-			if(mp > 5) {
-				this.mp -= 5;
+		public void Magic(int useMp) {
+			if(mp > useMp) {
+				this.mp -= useMp;
 				Debug.Log("魔法攻撃をした。残りmpは" + this.mp );
-
 			} else {
 				Debug.Log("MPが足りないため魔法が使えない。");
 			}
@@ -21,13 +20,13 @@ public class Test : MonoBehaviour {
 		int[] array = {11, 22, 33, 44, 55};
 		for(int i = 0; i < array.Length; i++)
 			Debug.Log(array[i]);
-
-		for(int p = 4; p >= 0; p--)
+		int length = array.Length - 1;
+		for (int p = length; p >= 0; p--) 
 			Debug.Log(array[p]);
-		
+
 		Boss boss = new Boss ();
 		for (int m = 0; m <= 10; m++) {
-			boss.Magic ();
+			boss.Magic (5);
 		}
 	}
 	
