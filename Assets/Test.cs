@@ -6,7 +6,7 @@ public class Test : MonoBehaviour {
 	public class Boss {
 		public int mp = 53;
 		public void Magic(int useMp) {
-			if(mp > useMp) {
+			if(mp >= useMp) {
 				this.mp -= useMp;
 				Debug.Log("魔法攻撃をした。残りmpは" + this.mp );
 			} else {
@@ -20,8 +20,8 @@ public class Test : MonoBehaviour {
 		int[] array = {11, 22, 33, 44, 55};
 		for(int i = 0; i < array.Length; i++)
 			Debug.Log(array[i]);
-		int length = array.Length - 1;
-		for (int p = length; p >= 0; p--) 
+//		int length = array.Length - 1;
+		for (int p = array.Length - 1; p >= 0; p--) 
 			Debug.Log(array[p]);
 
 		Boss boss = new Boss ();
